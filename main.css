@@ -1,0 +1,202 @@
+:root {
+  font-size: 16px;
+  font-family: monospace;
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #3d5afe;
+  --transition-speed: 600ms;
+}
+
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  color: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  color: #6649b8;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 0;
+  padding-top: 1rem;
+  background-image: url("theAteam.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  height: 100vh;
+}
+
+.pavbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  background-image: url("login_bg.png");
+  transition: width 200ms ease;
+}
+
+.mylogo {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.mylogo i {
+  transform: rotate(0deg);
+  color: dodgerblue;
+  margin-left: 2rem;
+  transition: transform var(--transition-speed);
+}
+
+.pavbar:hover .mylogo i {
+  transform: rotate(1080deg);
+  padding-left: 1rem;
+  margin-left: 0;
+}
+
+.pavbar-pav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.pav-item {
+  width: 100%;
+}
+
+.pav-link {
+  display: flex;
+  align-items: center;
+  height: 3.2rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.9);
+  transition: var(--transition-speed);
+}
+
+.pav-link:hover {
+  filter: grayscale(0) brightness(100%) opacity(0.6);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.pav-link-mylogo {
+  display: flex;
+  align-items: center;
+  height: 3.2rem;
+  text-decoration: none;
+}
+
+.pav-link i {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.mylogo-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+@media only screen and (max-width: 600px) {
+  .pavbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .mylogo {
+    display: none;
+  }
+
+  .pavbar-pav {
+    flex-direction: row;
+  }
+
+  .pav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+
+  .head {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .pavbar {
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .pavbar:hover {
+    width: 15rem;
+    z-index: 999999999999999999999999999999999;
+  }
+
+  .pavbar:hover .link-text {
+    display: inline;
+    transition: opacity var(--transition-speed);
+  }
+
+  .pavbar:hover .mylogo-text {
+    display: inline;
+    transition: opacity var(--transition-speed);
+  }
+
+  .pav-item:last-child {
+    margin-top: auto;
+  }
+
+  .head {
+    margin-left: 5rem;
+    z-index: 1;
+    background-image: url("banner.jpg");
+  }
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("Pacifico-Regular.ttf");
+}
+
+.pacifico {
+  font-family: "Pacifico";
+}
